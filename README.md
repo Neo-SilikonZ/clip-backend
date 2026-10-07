@@ -14,6 +14,7 @@ Clip is a RESTful backend API designed to manage digital wallets for a QR paymen
 * **Database:** H2 (In-Memory)
 * **ORM:** Spring Data JPA / Hibernate
 * **Build Tool:** Maven
+* **Testing:** Postman
 
 ## ️ Architecture
 The application follows a standard **Layered Architecture** to ensure separation of concerns and maintainability:
