@@ -27,5 +27,5 @@ The application follows a standard **Layered Architecture** to ensure separation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/clip-backend.git
+   git clone https://github.com/Neo-SilikonZ/clip-backend.git
    cd clip-backend
