@@ -11,8 +11,8 @@ public class WalletController {
 
     private final WalletService walletService;
 
-    // Spring Boot automatically injects the Chef (Service) here!
     public WalletController(WalletService walletService) {
+
         this.walletService = walletService;
     }
 

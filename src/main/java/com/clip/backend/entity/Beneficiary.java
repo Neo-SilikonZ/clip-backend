@@ -15,14 +15,20 @@ public class Beneficiary {
     @Column(name="owner_wallet_id", nullable = false)
     private Long ownerWalletId;
 
-    @Column(name="owner_name",nullable = false)
-    private String ownerName;
+    @Column(name="beneficiary_name",nullable = false)
+    private String beneficiaryName;
 
     @Column(name="beneficiary_wallet_id",nullable = false)
     private Long beneficiaryWalletId;
 
-    // hibernate needs this empty constructor
     public Beneficiary() {
+
+    }
+
+    public Beneficiary(Long ownerWalletId, String beneficiaryName, Long beneficiaryWalletId) {
+        this.ownerWalletId = ownerWalletId;
+        this.beneficiaryName = beneficiaryName;
+        this.beneficiaryWalletId = beneficiaryWalletId;
     }
 
 }

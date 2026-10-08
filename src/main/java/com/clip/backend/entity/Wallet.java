@@ -23,4 +23,8 @@ public class Wallet {
     public Wallet() {
     }
 
+    public Wallet(BigDecimal balance, Long userId) {
+        this.balance = balance;
+        this.userId = userId;
+    }
 }
