@@ -1,7 +1,6 @@
 package com.clip.backend.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,12 +8,11 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
-@Table(name= "user")
+@Table(name= "users")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
     @Id
@@ -30,9 +28,14 @@ public class User {
     @Column(name="user_name", nullable = false)
     private String username;
 
-    @Column(name="", nullable = false)
+    @Column(name="createdAt", nullable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-
+    public User(Long id, String email, String password, String username) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.username = username;
+    }
 }

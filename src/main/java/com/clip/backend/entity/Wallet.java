@@ -11,7 +11,6 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 
 public class Wallet {
 
@@ -25,4 +24,8 @@ public class Wallet {
     @Column(name="user_id",nullable = false)
     private Long userId;
 
+    public Wallet(BigDecimal balance, Long userId) {
+        this.userId = userId;
+        this.balance = balance;
+    }
 }
