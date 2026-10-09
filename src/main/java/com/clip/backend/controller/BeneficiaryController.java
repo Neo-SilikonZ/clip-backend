@@ -2,10 +2,7 @@ package com.clip.backend.controller;
 
 import com.clip.backend.entity.Beneficiary;
 import com.clip.backend.service.BeneficiaryService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/beneficiary")
@@ -17,9 +14,9 @@ public class BeneficiaryController {
         this.beneficiaryService = beneficiaryService;
     }
 
-    @GetMapping("/create")
-    public Beneficiary createBeneficiary(@RequestParam Long ownerWalletId, String beneficiaryName, Long beneficiaryWalletId) {
+    @PostMapping
+    public Beneficiary createBeneficiary(@RequestBody Beneficiary beneficiary) {
 
-        return beneficiaryService.createBeneficiary(ownerWalletId,beneficiaryName,beneficiaryWalletId);
+        return beneficiaryService.createBeneficiary(beneficiary.getOwnerWalletId(), beneficiary.getBeneficiaryName(), beneficiary.getBeneficiaryWalletId());
     }
 }

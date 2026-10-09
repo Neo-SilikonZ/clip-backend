@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor// generates all the getter/setter logic
+
 public class Beneficiary {
 
     @Id
@@ -24,4 +24,9 @@ public class Beneficiary {
     @Column(name="beneficiary_wallet_id",nullable = false)
     private Long beneficiaryWalletId;
 
+    public Beneficiary(Long ownerWalletId, String beneficiaryName, Long beneficiaryWalletId) {
+        this.ownerWalletId = ownerWalletId;
+        this.beneficiaryName = beneficiaryName;
+        this.beneficiaryWalletId = beneficiaryWalletId;
+    }
 }

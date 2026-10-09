@@ -2,10 +2,7 @@ package com.clip.backend.controller;
 
 import com.clip.backend.entity.Wallet;
 import com.clip.backend.service.WalletService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/wallet")
@@ -18,9 +15,8 @@ public class WalletController {
         this.walletService = walletService;
     }
 
-    @GetMapping("/create")
-    public Wallet createWallet(@RequestParam Long userId) {
-
+    @PostMapping("/{userId}")
+    public Wallet createWallet(@PathVariable Long userId) {
         return walletService.createWallet(userId);
     }
 }
