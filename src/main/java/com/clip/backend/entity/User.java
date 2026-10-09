@@ -32,8 +32,7 @@ public class User {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    public User(Long id, String email, String password, String username) {
-        this.id = id;
+    public User(String email, String password, String username) {
         this.email = email;
         this.password = password;
         this.username = username;

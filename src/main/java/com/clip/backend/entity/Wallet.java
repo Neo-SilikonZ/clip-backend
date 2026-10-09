@@ -24,6 +24,9 @@ public class Wallet {
     @Column(name="user_id",nullable = false)
     private Long userId;
 
+    @Column(name="status", nullable = false)
+    private String status;
+
     public Wallet(BigDecimal balance, Long userId) {
         this.userId = userId;
         this.balance = balance;

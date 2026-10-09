@@ -1,7 +1,10 @@
 package com.clip.backend.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -9,7 +12,9 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="transaction")
-@Data
+@Setter
+@Getter
+@NoArgsConstructor
 public class Transaction {
 
     @Id
@@ -26,8 +31,17 @@ public class Transaction {
     private BigDecimal amount;
 
     @Column(name="created_at", nullable = false)
+    @CreationTimestamp
     public LocalDateTime CreatedAt;
 
     @Column(name="status", nullable = false)
     private String status;
+
+    public Transaction(Long id, Long senderWalletId, Long receiverWalletId, BigDecimal amount, String status) {
+        this.id = id;
+        this.senderWalletId = senderWalletId;
+        this.receiverWalletId = receiverWalletId;
+        this.amount = amount;
+        this.status = status;
+    }
 }

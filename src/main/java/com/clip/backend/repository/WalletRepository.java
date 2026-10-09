@@ -6,7 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WalletRepository extends JpaRepository<Wallet, Long> {
-    // Spring Data JPA automatically provides:
-    // save(), findById(), findAll(), deleteById(), count(), etc.
-    // You don't have to write any of the SQL!
+
 }
