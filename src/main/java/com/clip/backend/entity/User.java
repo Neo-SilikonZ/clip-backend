@@ -1,14 +1,20 @@
 package com.clip.backend.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Table(name= "user")
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -28,14 +34,5 @@ public class User {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    public User() {
-    }
-
-    public User(Long id, String email, String password, String username, LocalDateTime createdAt) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.username = username;
-    }
 
 }

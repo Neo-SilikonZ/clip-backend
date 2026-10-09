@@ -2,12 +2,17 @@ package com.clip.backend.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import lombok.Data;
+
+import lombok.*;
 
 
 @Entity
 @Table(name = "wallets")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Wallet {
 
     @Id
@@ -20,11 +25,4 @@ public class Wallet {
     @Column(name="user_id",nullable = false)
     private Long userId;
 
-    public Wallet() {
-    }
-
-    public Wallet(BigDecimal balance, Long userId) {
-        this.balance = balance;
-        this.userId = userId;
-    }
 }
